@@ -1,6 +1,8 @@
 import React from 'react'
 import Affair from './Affair'
-import {AffairType} from './HW2'
+import {AffairType, filterAffairs} from './HW2'
+import affair from "./Affair";
+import s from './Affairs.module.css'
 
 type AffairsPropsType = { // need to fix any
     data: any
@@ -10,6 +12,7 @@ type AffairsPropsType = { // need to fix any
 
 function Affairs(props: AffairsPropsType) {
     const mappedAffairs = props.data.map((a: AffairType) => (
+
         <Affair // should work
             key={a._id} // кеи ОБЯЗАТЕЛЬНЫ в 99% - так что лучше их писать всегда при создании компонент в мапе
             affair={a}
@@ -17,20 +20,29 @@ function Affairs(props: AffairsPropsType) {
         />
     ))
 
-    const setAll = () => {} // need to fix
-    const setHigh = () => {}
-    const setMiddle = () => {}
-    const setLow = () => {}
+    const setAll = () => {
+        props.setFilter('all')
+    } // need to fix
+    const setHigh = () => {
+        props.setFilter('high')
+        console.log("High")
+    }
+    const setMiddle = () => {
+        props.setFilter('middle')
+    }
+    const setLow = () => {
+        props.setFilter('low')
+    }
 
     return (
         <div>
-
-            {mappedAffairs}
-
-            <button onClick={setAll}>All</button>
-            <button onClick={setHigh}>High</button>
-            <button onClick={setMiddle}>Middle</button>
-            <button onClick={setLow}>Low</button>
+            <div>{mappedAffairs} </div>
+            <div >
+                <button className={s.buttonPriority} onClick={setAll}>All</button>
+                <button className={s.buttonPriority} onClick={setHigh}>High</button>
+                <button className={s.buttonPriority} onClick={setMiddle}>Middle</button>
+                <button className={s.buttonPriority} onClick={setLow}>Low</button>
+            </div>
         </div>
     )
 }
