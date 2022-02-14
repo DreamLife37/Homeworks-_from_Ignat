@@ -1,16 +1,17 @@
 import React from 'react'
 import Affair from './Affair'
-import {AffairType, filterAffairs} from './HW2'
+import {AffairType, FilterType} from './HW2'
 import affair from "./Affair";
 import s from './Affairs.module.css'
 
 type AffairsPropsType = { // need to fix any
-    data: any
-    setFilter: any
-    deleteAffairCallback: any
+    data: AffairType[]
+    setFilter: (filter: FilterType) => void
+    deleteAffairCallback: (_id: number) => void
 }
 
 function Affairs(props: AffairsPropsType) {
+
     const mappedAffairs = props.data.map((a: AffairType) => (
 
         <Affair // should work
@@ -37,7 +38,7 @@ function Affairs(props: AffairsPropsType) {
     return (
         <div>
             <div>{mappedAffairs} </div>
-            <div >
+            <div>
                 <button className={s.buttonPriority} onClick={setAll}>All</button>
                 <button className={s.buttonPriority} onClick={setHigh}>High</button>
                 <button className={s.buttonPriority} onClick={setMiddle}>Middle</button>
