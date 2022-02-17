@@ -3,5 +3,13 @@
 }
 
 .error {
-    border: 1px solid red;
+    border: 2px solid red;
+}
+
+.wrapper {
+    padding: 20px
+}
+
+.count {
+    padding-left: 15px;
 }
