@@ -1,5 +1,7 @@
-import React from 'react'
+import React, {ChangeEvent} from 'react'
 import s from './Greeting.module.css'
+import SuperInputText from "./SuperInputText";
+import SuperButton from "./SuperButton";
 
 type GreetingPropsType = {
     name: string // need to fix any
@@ -13,14 +15,22 @@ type GreetingPropsType = {
 const Greeting: React.FC<GreetingPropsType> = (
     {name, setNameCallback, addUser, error, totalUsers} // деструктуризация пропсов
 ) => {
-    const inputClass = error ? s.error : '' // need to fix with (?:)
+
 
     return (
         <div>
-            <input value={name} onChange={e => setNameCallback(e.currentTarget.value)} className={inputClass}/>
-            <div><span>{error}</span></div>
-            <button onClick={addUser} disabled={!name}>add</button>
-            <span className={s.count}>All students: {totalUsers}</span>
+            <SuperInputText
+                value={name}
+                onChangeText={setNameCallback}
+                // onEnter={showAlert}
+                error={error}/>
+
+            <div>
+                <SuperButton
+                    disabled={!name}
+                    onClick={addUser}
+                >ADD</SuperButton>
+                <span className={s.count}>All students: {totalUsers}</span></div>
         </div>
     )
 }

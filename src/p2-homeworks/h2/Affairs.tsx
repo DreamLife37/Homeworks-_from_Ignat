@@ -3,6 +3,7 @@ import Affair from './Affair'
 import {AffairType, FilterType} from './HW2'
 import affair from "./Affair";
 import s from './Affairs.module.css'
+import SuperButton from "./SuperButton";
 
 type AffairsPropsType = { // need to fix any
     data: AffairType[]
@@ -39,10 +40,10 @@ function Affairs(props: AffairsPropsType) {
         <div>
             <div>{mappedAffairs} </div>
             <div>
-                <button className={s.buttonPriority} onClick={setAll}>All</button>
-                <button className={s.buttonPriority} onClick={setHigh}>High</button>
-                <button className={s.buttonPriority} onClick={setMiddle}>Middle</button>
-                <button className={s.buttonPriority} onClick={setLow}>Low</button>
+                <SuperButton onClick={setAll}>All</SuperButton>
+                <SuperButton onClick={setHigh}>High</SuperButton>
+                <SuperButton onClick={setMiddle}>Middle</SuperButton>
+                <SuperButton onClick={setLow}>Low</SuperButton>
             </div>
         </div>
     )
