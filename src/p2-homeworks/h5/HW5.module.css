@@ -1,0 +1,38 @@
+
+.item {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+}
+
+.activeLink {
+    color: gold;
+    text-decoration: none;
+}
+
+.block {
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    background: #e74c3c;
+    padding: 5px;
+}
+
+.header {
+    display: flex;
+    width: 380px;
+    transition-duration: 400ms;
+    background-color: #24282C;
+    transform: translate(-320px);
+}
+
+.header:hover {
+    transition-duration: 400ms;
+    transform: translate(0);
+}
+
+.pageError {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50em
+}
