@@ -1,0 +1,10 @@
+.spanClass {
+    display: inline-block;
+    cursor: text;
+    height: 23px;
+    padding-top: 9px;
+}
+
+.divClassName {
+    padding-left: 10px;
+}
