@@ -1,0 +1,50 @@
+.checkboxWrapper input {
+    position: absolute;
+    opacity: 0;
+    сursor: pointer;
+
+}
+
+.checkboxWrapper label {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 17px;
+    user-select: none;
+    margin-top: 10px;
+}
+
+.checkboxWrapper span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #e74c3c;
+    border-radius: 50%;
+}
+
+.checkboxWrapper label input:checked ~ span {
+    background-color: #0177fe;
+}
+
+.checkboxWrapper span:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkboxWrapper label input:checked ~ span:after {
+    display: block;
+}
+
+.checkboxWrapper label span:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}
