@@ -1,0 +1,10 @@
+
+.clock {
+    width: 800px;
+    margin: 0 auto;
+    color: #fff;
+    font-family: Calibri, sans-serif;
+    font-size: 36px;
+    text-align: center;
+    text-shadow: 0 0 5px #00c6ff;
+}
