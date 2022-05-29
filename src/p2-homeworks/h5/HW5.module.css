@@ -11,16 +11,16 @@
 }
 
 .block {
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 40px;
     margin: 5px;
     background: #e74c3c;
-    padding: 5px;
+    padding: 10px;
 }
 
 .header {
     display: flex;
-    width: 380px;
+    width: 370px;
     transition-duration: 400ms;
     background-color: #24282C;
     transform: translate(-320px);
